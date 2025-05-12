@@ -1,6 +1,6 @@
 /**
  * 截图功能实现
- * 
+ *
  * 使用 Astral 浏览器引擎和 ImageScript 处理图片
  * @module
  */
@@ -12,7 +12,7 @@ import { join } from "@std/path";
 
 /**
  * 对指定 URL 进行截图并保存
- * 
+ *
  * @param url - 要截图的网页 URL
  * @param id - 截图文件的标识符
  * @param options - 截图配置选项
@@ -21,7 +21,7 @@ import { join } from "@std/path";
 export async function takeScreenshot(
   url: string,
   id: string,
-  options: ScreenshotPluginOptions = {},
+  options: ScreenshotPluginOptions = {}
 ) {
   const {
     outputDir = "./www/static/showcase",
@@ -31,7 +31,7 @@ export async function takeScreenshot(
 
   const parsedUrl = new URL(url);
   if (parsedUrl.protocol !== "http:" && parsedUrl.protocol !== "https:") {
-    throw new Error("无效的 URL");
+    throw new Error("Invalid URL");
   }
 
   const browser = await launch();
@@ -47,14 +47,14 @@ export async function takeScreenshot(
   const image2x = await Image.decode(raw);
   await Deno.writeFile(
     join(absoluteOutputDir, `${id}2x.jpg`),
-    await image2x.encodeJPEG(quality),
+    await image2x.encodeJPEG(quality)
   );
 
   if (generateRetina) {
     const image1x = image2x.resize(image2x.width / 2, Image.RESIZE_AUTO);
     await Deno.writeFile(
       join(absoluteOutputDir, `${id}1x.jpg`),
-      await image1x.encodeJPEG(quality),
+      await image1x.encodeJPEG(quality)
     );
   }
 }
