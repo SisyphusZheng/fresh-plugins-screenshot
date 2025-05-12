@@ -1,10 +1,11 @@
 {
-  "name": "@freshpress/plugin-screenshot",
-  "version": "0.0.2",
+  "name": "@freshpress/fresh-plugin-screenshot",
+  "version": "0.0.3",
   "description": "A Fresh plugin for taking screenshots of web pages and saving them in multiple resolutions",
   "exports": {
     ".": "./src/mod.ts"
   },
+  "license": "MIT",
   "tasks": {
     "dev": "deno run -A --watch=src/ mod.ts",
     "screenshot": "deno run -A src/mod.ts",
