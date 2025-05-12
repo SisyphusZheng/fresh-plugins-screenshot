@@ -1,6 +1,6 @@
 {
   "name": "@freshpress/fresh-plugin-screenshot",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A Fresh plugin for taking screenshots of web pages and saving them in multiple resolutions",
   "exports": {
     ".": "./src/mod.ts"
