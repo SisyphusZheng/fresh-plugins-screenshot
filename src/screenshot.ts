@@ -1,7 +1,7 @@
 /**
- * 截图功能实现
+ * Screenshot functionality implementation
  *
- * 使用 Astral 浏览器引擎和 ImageScript 处理图片
+ * Uses Astral browser engine and ImageScript for image processing
  * @module
  */
 
@@ -11,12 +11,12 @@ import type { ScreenshotPluginOptions } from "./types.ts";
 import { join } from "@std/path";
 
 /**
- * 对指定 URL 进行截图并保存
+ * Takes a screenshot of the specified URL and saves it
  *
- * @param url - 要截图的网页 URL
- * @param id - 截图文件的标识符
- * @param options - 截图配置选项
- * @throws {Error} 当 URL 无效或截图过程出错时抛出错误
+ * @param url - The webpage URL to screenshot
+ * @param id - Identifier for the screenshot file
+ * @param options - Screenshot configuration options
+ * @throws {Error} Throws an error when URL is invalid or screenshot process fails
  */
 export async function takeScreenshot(
   url: string,
