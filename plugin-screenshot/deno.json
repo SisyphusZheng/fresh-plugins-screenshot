@@ -1,0 +1,23 @@
+{
+  "name": "@freshpress/plugin-screenshot",
+  "version": "0.0.2",
+  "description": "A Fresh plugin for taking screenshots of web pages and saving them in multiple resolutions",
+  "exports": {
+    ".": "./src/mod.ts"
+  },
+  "tasks": {
+    "dev": "deno run -A --watch=src/ mod.ts",
+    "screenshot": "deno run -A src/mod.ts",
+    "test": "deno test -A test.ts"
+  },
+  "imports": {
+    "fresh": "jsr:@fresh/core@^2.0.0-alpha.26",
+    "astral": "jsr:@astral/astral@^0.5.2",
+    "imagescript": "npm:imagescript@1.3.0",
+    "@std/path": "jsr:@std/path@^1"
+  },
+  "runtimes": {
+    "deno": "compatible",
+    "node": "compatible"
+  }
+}
